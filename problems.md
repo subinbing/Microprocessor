@@ -10,10 +10,10 @@
 
 - SW7 누르면 0도로 설정) 
 
->> 실내  :  Remote controllerAVR-A 을 위해 모든 PORT 입출력 방향을 DDR에서 설정하고, 이것을 INIT_DDR() 라는 함수로 구현
+1) 실내  :  Remote controllerAVR-A 을 위해 모든 PORT 입출력 방향을 DDR에서 설정하고, 이것을 INIT_DDR() 라는 함수로 구현
 
 
->> 실내 : 키패드를 읽는 함수 int key_pad()
+2) 실내 : 키패드를 읽는 함수 int key_pad()
 
 - SW4 누르면 보일러 설정 온도가 증가 (설정 온도 변수: temp(전역 변수))
 
@@ -24,20 +24,20 @@
 - SW7 누르면 0도 로 설정
 
 
->> 실내 : unsigned char FND_value1, FND_value2는 전역 변수로 4자리 FND에 표시될 2자리 수.
+3) 실내 : unsigned char FND_value1, FND_value2는 전역 변수로 4자리 FND에 표시될 2자리 수.
 
 이것을 표시할 함수 display_FND()을 구현(단, 4자리 표시에서 2자리만 사용)
 
 
-//실내 : 시리얼 초기화 루틴을 만들어라 보오레이트는 9600, 함수 void serial_init(unsigned long baud) 을 만들기
+4) 실내 : 시리얼 초기화 루틴을 만들어라 보오레이트는 9600, 함수 void serial_init(unsigned long baud) 을 만들기
 
 
->> 실내 : 실내온도 즉 내부 온도는 ADC4에서 받고, 이것을 읽어 들이는 get_adc() 함수를 만들기
+5) 실내 : 실내온도 즉 내부 온도는 ADC4에서 받고, 이것을 읽어 들이는 get_adc() 함수를 만들기
 
 
->> 실내 : AVR128-B로 요청(ReadyToSend)을 받으면 설정 온도와 실내 온도를 AVR128-B 에 전송하는 함수 만들기 (설정 온도와 실내 온도는 각 각 2개의 아스키 코드로 되어 있음) 이것을 구현하는 send_temp(,,,,)을 프로그램 만들기
+6) 실내 : AVR128-B로 요청(ReadyToSend)을 받으면 설정 온도와 실내 온도를 AVR128-B 에 전송하는 함수 만들기 (설정 온도와 실내 온도는 각 각 2개의 아스키 코드로 되어 있음) 이것을 구현하는 send_temp(,,,,)을 프로그램 만들기
 
 
->> 실외 : AVR128-B에서 원격 보일러에서 수신하여 제어하는 프로그램을 작성한다.  AVR128-A로 요청 (ReadyToSend)을 한 후, 보일러 설정 온도와 실내 온도를 받고 보일러를 제어
+7) 실외 : AVR128-B에서 원격 보일러에서 수신하여 제어하는 프로그램을 작성한다.  AVR128-A로 요청 (ReadyToSend)을 한 후, 보일러 설정 온도와 실내 온도를 받고 보일러를 제어
 
 
